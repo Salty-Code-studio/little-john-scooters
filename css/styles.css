@@ -263,7 +263,12 @@ html.static .burnout-stage { display: none; }
 
 /* ---------- trust ---------- */
 .stars { color: var(--ink); font-size: 26px; letter-spacing: .24em; margin-bottom: 20px; }
+.stars-note { font-family: var(--body); font-size: 13px; letter-spacing: .12em; font-weight: 700; text-transform: uppercase; vertical-align: middle; margin-left: 8px; }
 .quotes blockquote { font-size: 16px; font-style: italic; font-weight: 600; }
+.quotes blockquote cite { display: block; margin-top: 12px; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .55; }
+.review-link { display: inline-block; margin-top: 22px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.tour-quote { margin-top: 30px; font-size: 16px; font-style: italic; font-weight: 600; max-width: 560px; }
+.tour-quote cite { display: block; margin-top: 12px; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .6; }
 .facts { margin-top: 30px; display: grid; gap: 6px; }
 .facts p { font-size: 15px; }
 .facts strong { text-transform: uppercase; font-size: 12.5px; letter-spacing: .14em; }
