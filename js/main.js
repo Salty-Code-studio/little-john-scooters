@@ -3,11 +3,10 @@
   'use strict';
 
   /* ---- booking bridge ----
-     When the FleetDesk booking system goes live, set BOOKING_URL to its
-     public booking address (e.g. 'https://book.littlejohnscooters.com').
-     Every .js-book CTA then routes there. While null, CTAs keep their
-     WhatsApp / in-page fallbacks. */
-  var BOOKING_URL = null;
+     BOOKING_URL lives in js/config.js. When the FleetDesk system goes live it
+     points there and every .js-book CTA re-routes; while null, the CTAs go to
+     the /book/ WhatsApp quiz (their href in the markup). */
+  var BOOKING_URL = (window.LJ_CONFIG && window.LJ_CONFIG.BOOKING_URL) || null;
 
   if (BOOKING_URL) {
     document.querySelectorAll('.js-book').forEach(function (a) {

@@ -27,4 +27,16 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/tours/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/tours/"/>
   </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/book/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/book/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/book/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/nl/book/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/book/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/book/"/>
+  </url>
 </urlset>

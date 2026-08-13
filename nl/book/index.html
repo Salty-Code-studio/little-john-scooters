@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserveer je scooter · Little John Scooters · Bonaire</title>
+<meta name="description" content="Reserveer een Little John scooter in één minuut. Beantwoord een paar korte vragen en stuur je boeking direct via WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/">
+<link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/book/">
+<link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/">
+<link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/book/">
+<meta property="og:title" content="Reserveer je scooter · Little John Scooters">
+<meta property="og:description" content="Eén minuut, een paar vragen, en je aanvraag landt direct in onze WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://salty-code-studio.github.io/little-john-scooters/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="lockup" href="../" aria-label="Little John Scooters home" style="text-decoration:none">
+    <span class="script">Little John</span>
+    <span class="caps">Scooter Rental · <em>Bonaire</em></span>
+  </a>
+  <p class="tagbar">★ Boeken in één minuut ★</p>
+  <div class="topnav">
+    <nav class="navlinks" aria-label="Hoofdmenu">
+      <a href="../tours/">Island Tour</a>
+      <a href="../#repairs">Reparaties &amp; Onderdelen</a>
+    </nav>
+    <div class="lang" aria-label="Taal">
+      <a href="../../book/" lang="en" hreflang="en">EN</a>
+      <span aria-current="true">NL</span>
+    </div>
+    <a class="pill" href="https://wa.me/5997774734?text=Hoi%21%20Ik%20wil%20graag%20een%20scooter%20reserveren." target="_blank" rel="noopener">WhatsApp ons</a>
+  </div>
+</header>
+
+<main>
+  <section class="stop field-mint quiz-stop">
+    <div class="quiz">
+      <div class="quiz-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+      <!-- Stap 1: hoeveel -->
+      <section class="q-step active" aria-label="Hoeveel scooters">
+        <h1 class="q-title">Hoeveel<br>scooters?</h1>
+        <p class="q-sub">Allemaal de mintgroene Myst 50cc. Plek voor twee per scooter.</p>
+        <div class="q-card">
+          <div class="q-opts row">
+            <button type="button" class="q-opt sel" data-qty="1">1</button>
+            <button type="button" class="q-opt" data-qty="2">2</button>
+            <button type="button" class="q-opt" data-qty="3">3</button>
+            <button type="button" class="q-opt" data-qty="4">4+</button>
+          </div>
+          <p class="q-error" role="alert"></p>
+        </div>
+      </section>
+
+      <!-- Stap 2: data -->
+      <section class="q-step" aria-label="Data">
+        <h1 class="q-title">Wanneer<br>rij je?</h1>
+        <p class="q-sub">Open ma-vr 09:00-17:00, za 10:00-14:00, zondag op afspraak.</p>
+        <div class="q-card">
+          <label class="q-field"><span>Ophaaldatum</span><input class="q-input" type="date" id="qFrom"></label>
+          <label class="q-field"><span>Terugbrengdatum</span><input class="q-input" type="date" id="qUntil"></label>
+          <div class="q-field"><span>Ophaaltijd (ongeveer)</span>
+            <div class="q-chips">
+              <button type="button" class="q-chip" data-time="09:00">09:00</button>
+              <button type="button" class="q-chip" data-time="11:00">11:00</button>
+              <button type="button" class="q-chip" data-time="13:00">13:00</button>
+              <button type="button" class="q-chip" data-time="15:00">15:00</button>
+              <button type="button" class="q-chip" data-time="flexibel">Flexibel</button>
+            </div>
+          </div>
+          <div class="q-est" id="qEst" hidden></div>
+          <p class="q-error" role="alert"></p>
+          <div class="q-nav">
+            <button type="button" class="btn btn-line" data-back>Terug</button>
+            <button type="button" class="btn btn-ink" data-next>Verder</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stap 3: waar -->
+      <section class="q-step" aria-label="Ophalen of bezorgen">
+        <h1 class="q-title">Ophalen of<br>bezorgen?</h1>
+        <p class="q-sub">We brengen de scooter ook naar je hotel of appartement.</p>
+        <div class="q-card">
+          <div class="q-opts">
+            <button type="button" class="q-opt sel" data-where="shop">Bij de shop · Kaya Industria 17-5</button>
+            <button type="button" class="q-opt" data-where="delivery">Breng 'm naar mij</button>
+          </div>
+          <label class="q-field" id="qPlaceField" hidden><span>Waar?</span><input class="q-input" type="text" id="qPlace" placeholder="Hotel, appartement of adres"></label>
+          <p class="q-error" role="alert"></p>
+          <div class="q-nav">
+            <button type="button" class="btn btn-line" data-back>Terug</button>
+            <button type="button" class="btn btn-ink" data-next>Verder</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stap 4: naam -->
+      <section class="q-step" aria-label="Je naam">
+        <h1 class="q-title">Wie gaat<br>er rijden?</h1>
+        <p class="q-sub">Een naam voor de boeking is genoeg. Je stuurt het bericht zelf, dus je WhatsApp-nummer komt automatisch mee.</p>
+        <div class="q-card">
+          <label class="q-field"><span>Je naam</span><input class="q-input" type="text" id="qName" placeholder="Je naam" autocomplete="name"></label>
+          <label class="q-field"><span>Nog iets kwijt? (optioneel)</span><input class="q-input" type="text" id="qNote" placeholder="Tweede helm, late aankomst…"></label>
+          <p class="q-error" role="alert"></p>
+          <div class="q-nav">
+            <button type="button" class="btn btn-line" data-back>Terug</button>
+            <button type="button" class="btn btn-ink" data-next>Verder</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stap 5: samenvatting + versturen -->
+      <section class="q-step" aria-label="Verstuur je aanvraag">
+        <h1 class="q-title">Versturen.<br>Rijden.</h1>
+        <p class="q-sub">Eén tik opent WhatsApp met je aanvraag kant-en-klaar. Sjonny bevestigt 'm persoonlijk. Betalen doe je bij het ophalen: contant of pin.</p>
+        <div class="q-card">
+          <ul class="q-recap">
+            <li><b>Scooters</b><span id="rQty"></span></li>
+            <li><b>Van</b><span id="rFrom"></span></li>
+            <li><b>Tot</b><span id="rUntil"></span></li>
+            <li id="rEstRow"><b>Richtprijs</b><span id="rEst"></span></li>
+            <li><b>Waar</b><span id="rWhere"></span></li>
+            <li><b>Naam</b><span id="rName"></span></li>
+          </ul>
+          <a class="btn btn-mint btn-big q-wa" id="qSend" href="#" target="_blank" rel="noopener">Verstuur via WhatsApp</a>
+          <p class="q-alt">Liever even bellen? App of bel <a href="https://wa.me/5997774734" target="_blank" rel="noopener">+599 777 4734</a></p>
+          <div class="q-nav">
+            <button type="button" class="btn btn-line" data-back>Terug</button>
+            <span></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<div class="grain" aria-hidden="true"></div>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/book.js"></script>
+</body>
+</html>
