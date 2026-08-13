@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book your scooter · Little John Scooters · Bonaire</title>
-<meta name="description" content="Book a Little John scooter in one minute. Answer a few quick questions and send your booking straight to us on WhatsApp.">
+<meta name="description" content="Book a Little John scooter in one minute. Tap your days on the calendar and send your booking straight to us on WhatsApp.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://salty-code-studio.github.io/little-john-scooters/book/">
 <link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/book/">
 <link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/">
 <link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/book/">
-<meta property="og:title" content="Book your scooter · Little John Scooters">
-<meta property="og:description" content="One minute, a few questions, and your scooter request lands straight in our WhatsApp.">
+<meta property="og:title" content="Book your scooter · Little John Scooters · Bonaire">
+<meta property="og:description" content="Book a Little John scooter in one minute. Tap your days on the calendar and send your booking straight to us on WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://salty-code-studio.github.io/little-john-scooters/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,8 +19,7 @@
 <link rel="preload" href="../assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
+</head><body data-quiz="rental">
 
 <header class="topbar">
   <a class="lockup" href="../" aria-label="Little John Scooters home" style="text-decoration:none">
@@ -29,14 +28,8 @@
   </a>
   <p class="tagbar">★ Book in one minute ★</p>
   <div class="topnav">
-    <nav class="navlinks" aria-label="Main">
-      <a href="../tours/">Island Tour</a>
-      <a href="../#repairs">Repairs &amp; Parts</a>
-    </nav>
-    <div class="lang" aria-label="Language">
-      <span aria-current="true">EN</span>
-      <a href="../nl/book/" lang="nl" hreflang="nl">NL</a>
-    </div>
+    <nav class="navlinks" aria-label="Main"><a href="../tours/">Island Tour</a><a href="../repairs/">Repairs &amp; Parts</a></nav>
+    <div class="lang" aria-label="Language"><span aria-current="true">EN</span><a href="../nl/book/" lang="nl" hreflang="nl">NL</a></div>
     <a class="pill" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20reserve%20a%20scooter." target="_blank" rel="noopener">WhatsApp us</a>
   </div>
 </header>
@@ -44,115 +37,50 @@
 <main>
   <section class="stop field-mint quiz-stop">
     <div class="quiz">
-      <div class="quiz-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-
-      <!-- Step 1: how many -->
-      <section class="q-step active" aria-label="How many scooters">
-        <h1 class="q-title">How many<br>scooters?</h1>
-        <p class="q-sub">Every one of them is the mint Myst 50cc. Room for two per scooter.</p>
-        <div class="q-card">
-          <div class="q-opts row">
-            <button type="button" class="q-opt sel" data-qty="1">1</button>
-            <button type="button" class="q-opt" data-qty="2">2</button>
-            <button type="button" class="q-opt" data-qty="3">3</button>
-            <button type="button" class="q-opt" data-qty="4">4+</button>
-          </div>
-          <p class="q-error" role="alert"></p>
-        </div>
-      </section>
-
-      <!-- Step 2: dates -->
-      <section class="q-step" aria-label="Dates">
-        <h1 class="q-title">When do<br>you ride?</h1>
-        <p class="q-sub">Tap your days on the calendar. Open Mon-Fri 09:00-17:00, Sat 10:00-14:00, Sunday by appointment.</p>
-        <div class="q-card">
-          <div class="q-opts row q-modes">
-            <button type="button" class="q-opt sel" data-mode="range">Days &amp; weeks</button>
-            <button type="button" class="q-opt" data-mode="longterm">Long term · monthly</button>
-          </div>
-          <div class="cal2" id="qCal" aria-label="Pick your dates"></div>
-          <div class="q-field" id="qMonthsField" hidden><span>How many months?</span>
-            <div class="q-chips">
-              <button type="button" class="q-chip" data-months="1">1</button>
-              <button type="button" class="q-chip" data-months="2">2</button>
-              <button type="button" class="q-chip" data-months="3">3</button>
-              <button type="button" class="q-chip" data-months="4">4</button>
-              <button type="button" class="q-chip" data-months="5">5</button>
-              <button type="button" class="q-chip" data-months="6">6</button>
-            </div>
-          </div>
-          <div class="q-field"><span>Pick-up time (roughly)</span>
-            <div class="q-chips">
-              <button type="button" class="q-chip" data-time="09:00">09:00</button>
-              <button type="button" class="q-chip" data-time="11:00">11:00</button>
-              <button type="button" class="q-chip" data-time="13:00">13:00</button>
-              <button type="button" class="q-chip" data-time="15:00">15:00</button>
-              <button type="button" class="q-chip" data-time="flexible">Flexible</button>
-            </div>
-          </div>
-          <div class="q-est" id="qEst" hidden></div>
-          <p class="q-error" role="alert"></p>
-          <div class="q-nav">
-            <button type="button" class="btn btn-line" data-back>Back</button>
-            <button type="button" class="btn btn-ink" data-next>Continue</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 3: where -->
-      <section class="q-step" aria-label="Pickup or delivery">
-        <h1 class="q-title">Pickup or<br>delivery?</h1>
-        <p class="q-sub">We can bring the scooter to your hotel or apartment.</p>
-        <div class="q-card">
-          <div class="q-opts">
-            <button type="button" class="q-opt sel" data-where="shop">At the shop · Kaya Industria 17-5</button>
-            <button type="button" class="q-opt" data-where="delivery">Bring it to me</button>
-          </div>
-          <label class="q-field" id="qPlaceField" hidden><span>Where?</span><input class="q-input" type="text" id="qPlace" placeholder="Hotel, apartment or address"></label>
-          <p class="q-error" role="alert"></p>
-          <div class="q-nav">
-            <button type="button" class="btn btn-line" data-back>Back</button>
-            <button type="button" class="btn btn-ink" data-next>Continue</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 4: name -->
-      <section class="q-step" aria-label="Your name">
-        <h1 class="q-title">Who's<br>riding?</h1>
-        <p class="q-sub">A name for the booking is all we need. You send the message yourself, so we get your WhatsApp automatically.</p>
-        <div class="q-card">
-          <label class="q-field"><span>Your name</span><input class="q-input" type="text" id="qName" placeholder="Your name" autocomplete="name"></label>
-          <label class="q-field"><span>Anything to add? (optional)</span><input class="q-input" type="text" id="qNote" placeholder="Second helmet, late arrival…"></label>
-          <p class="q-error" role="alert"></p>
-          <div class="q-nav">
-            <button type="button" class="btn btn-line" data-back>Back</button>
-            <button type="button" class="btn btn-ink" data-next>Continue</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 5: summary + send -->
-      <section class="q-step" aria-label="Send your request">
-        <h1 class="q-title">Send it.<br>Ride it.</h1>
-        <p class="q-sub">One tap opens WhatsApp with your request ready to go. Sjonny confirms it personally. You pay at pickup: cash or card.</p>
-        <div class="q-card">
-          <ul class="q-recap">
-            <li><b>Scooters</b><span id="rQty"></span></li>
-            <li><b>From</b><span id="rFrom"></span></li>
-            <li><b>Until</b><span id="rUntil"></span></li>
-            <li id="rEstRow"><b>Price est.</b><span id="rEst"></span></li>
-            <li><b>Where</b><span id="rWhere"></span></li>
-            <li><b>Name</b><span id="rName"></span></li>
-          </ul>
-          <a class="btn btn-mint btn-big q-wa" id="qSend" href="#" target="_blank" rel="noopener">Send via WhatsApp</a>
-          <p class="q-alt">Rather talk? Call or app us at <a href="https://wa.me/5997774734" target="_blank" rel="noopener">+599 777 4734</a></p>
-          <div class="q-nav">
-            <button type="button" class="btn btn-line" data-back>Back</button>
-            <span></span>
-          </div>
-        </div>
-      </section>
+      <div class="quiz-progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+<section class="q-step active" data-validate="dates" aria-label="Dates">
+  <h1 class="q-title">When do<br>you ride?</h1>
+  <p class="q-sub">Tap your pick-up day and your return day. One scooter per request; riding with more people? Mention it in the note at the end. Open Mon-Fri 09:00-17:00, Sat 10:00-14:00.</p>
+  <div class="q-card">
+<div class="q-opts row q-modes"><button type="button" class="q-opt sel" data-mode="range">Days &amp; weeks</button><button type="button" class="q-opt" data-mode="longterm">Long term · monthly</button></div>
+<div class="cal2" id="qCal" aria-label="Pick your dates"></div>
+<div class="q-field" id="qMonthsField" hidden><span>How many months? (your return day fills in)</span><div class="q-chips"><button type="button" class="q-chip" data-months="1">1</button><button type="button" class="q-chip" data-months="2">2</button><button type="button" class="q-chip" data-months="3">3</button><button type="button" class="q-chip" data-months="4">4</button><button type="button" class="q-chip" data-months="5">5</button><button type="button" class="q-chip" data-months="6">6</button></div></div>
+<div class="q-field"><span>Pick-up time (roughly)</span><div class="q-chips"><button type="button" class="q-chip" data-time="09:00">09:00</button><button type="button" class="q-chip" data-time="11:00">11:00</button><button type="button" class="q-chip" data-time="13:00">13:00</button><button type="button" class="q-chip" data-time="15:00">15:00</button><button type="button" class="q-chip" data-time="flexible">Flexible</button></div></div>
+<div class="q-est" id="qEst" hidden></div>
+<p class="q-error" role="alert"></p>
+<div class="q-nav"><span></span><button type="button" class="btn btn-ink" data-next>Continue</button></div>
+  </div>
+</section>
+<section class="q-step" data-validate="where" aria-label="Pickup or delivery">
+  <h1 class="q-title">Pickup or<br>delivery?</h1>
+  <p class="q-sub">We can bring the scooter to your hotel or apartment.</p>
+  <div class="q-card">
+<div class="q-opts"><button type="button" class="q-opt sel" data-where="shop">At the shop · Kaya Industria 17-5</button><button type="button" class="q-opt" data-where="delivery">Bring it to me</button></div>
+<label class="q-field" id="qPlaceField" hidden><span>Where?</span><input class="q-input" type="text" id="qPlace" placeholder="Hotel, apartment or address"></label>
+<p class="q-error" role="alert"></p>
+<div class="q-nav"><button type="button" class="btn btn-line" data-back>Back</button><button type="button" class="btn btn-ink" data-next>Continue</button></div>
+  </div>
+</section>
+<section class="q-step" data-validate="name" aria-label="Your name">
+  <h1 class="q-title">Who's<br>riding?</h1>
+  <p class="q-sub">A name is all we need. You send the message yourself, so we get your WhatsApp automatically.</p>
+  <div class="q-card">
+<label class="q-field"><span>Your name</span><input class="q-input" type="text" id="qName" placeholder="Your name"></label>
+<label class="q-field"><span>Anything to add? (optional)</span><input class="q-input" type="text" id="qNote" placeholder="Second helmet, extra scooter, late arrival…"></label>
+<p class="q-error" role="alert"></p>
+<div class="q-nav"><button type="button" class="btn btn-line" data-back>Back</button><button type="button" class="btn btn-ink" data-next>Continue</button></div>
+  </div>
+</section>
+<section class="q-step" aria-label="Send your request">
+  <h1 class="q-title">Send it.<br>Ride it.</h1>
+  <p class="q-sub">One tap opens WhatsApp with your request ready to go. Sjonny confirms it personally. You pay at pickup: cash or card.</p>
+  <div class="q-card">
+    <ul class="q-recap"><li><b>Scooter</b><span>Myst 50cc</span></li><li><b>From</b><span id="rFrom"></span></li><li><b>Until</b><span id="rUntil"></span></li><li><b>Price est.</b><span id="rEst"></span></li><li><b>Where</b><span id="rWhere"></span></li><li><b>Name</b><span id="rName"></span></li></ul>
+    <a class="btn btn-mint btn-big q-wa" id="qSend" href="#" target="_blank" rel="noopener">Send via WhatsApp</a>
+    <p class="q-alt">Rather talk? Call or app us at <a href="https://wa.me/5997774734" target="_blank" rel="noopener">+599 777 4734</a></p>
+    <div class="q-nav"><button type="button" class="btn btn-line" data-back>Back</button><span></span></div>
+  </div>
+</section>
     </div>
   </section>
 </main>
@@ -160,6 +88,6 @@
 <div class="grain" aria-hidden="true"></div>
 
 <script src="../js/config.js"></script>
-<script src="../js/book.js"></script>
+<script src="../js/quiz.js"></script>
 </body>
 </html>

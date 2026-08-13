@@ -416,10 +416,12 @@ html.static .part-label { opacity: 1; }
 .q-modes { margin-bottom: 14px; }
 .q-modes .q-opt { font-size: 13.5px; padding: 11px 10px; }
 
-/* tap-to-pick calendar, styled after the phone-mockup calendar */
+/* tap-to-pick calendar, styled after the phone-mockup calendar; two months at a time */
 .cal2 { margin-top: 4px; }
-.cal2-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-.cal2-title { font-family: var(--display); text-transform: uppercase; font-size: 14.5px; letter-spacing: .06em; }
+.cal2-nav-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.cal2-months { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 700px) { .cal2-months { grid-template-columns: 1fr 1fr; gap: 18px; } }
+.cal2-title { font-family: var(--display); text-transform: uppercase; font-size: 13.5px; letter-spacing: .06em; text-align: center; margin-bottom: 6px; }
 .cal2-nav {
   width: 36px; height: 36px; border-radius: 12px; border: 2px solid var(--ink);
   background: #fff; font-weight: 700; font-size: 16px; cursor: pointer;

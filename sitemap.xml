@@ -39,4 +39,28 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/book/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/book/"/>
   </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/tours/book/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/tours/book/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/tours/book/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/tours/book/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/nl/tours/book/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/tours/book/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/tours/book/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/tours/book/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/repairs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/repairs/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/repairs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/repairs/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/nl/repairs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/repairs/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/repairs/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/repairs/"/>
+  </url>
 </urlset>
