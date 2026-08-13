@@ -190,7 +190,6 @@ html.static .burnout-stage { display: none; }
   transform: rotate(-4deg);
   filter: drop-shadow(0 14px 18px rgba(21, 24, 30, .28));
 }
-.cut-sensa { transform: rotate(3deg); width: 66%; }
 .fleet-cards { margin-top: 84px; }
 
 /* ---------- location photos + availability chips ---------- */
@@ -313,6 +312,69 @@ html.static .part-label { opacity: 1; }
   .repairs-wrap { grid-template-columns: 1fr; }
 }
 
+/* ---------- topbar nav + language toggle ---------- */
+.topnav { display: flex; align-items: center; gap: 14px; }
+.navlinks { display: none; gap: 16px; }
+@media (min-width: 720px) { .navlinks { display: flex; } }
+.navlinks a {
+  font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; padding: 6px 2px;
+  border-bottom: 3px solid transparent; transition: border-color .15s ease;
+}
+.navlinks a:hover { border-color: var(--ink); }
+.lang {
+  display: flex; align-items: center; gap: 2px;
+  background: #fff; border: 3px solid var(--ink); border-radius: 999px;
+  padding: 4px 6px; box-shadow: 3px 4px 0 var(--ink); font-size: 11.5px; font-weight: 700;
+}
+.lang a, .lang span { color: var(--ink); text-decoration: none; padding: 3px 7px; border-radius: 999px; letter-spacing: .06em; }
+.lang span { background: var(--ink); color: var(--cream); }
+.lang a:hover { background: var(--cream); }
+
+/* ---------- single-model fleet ---------- */
+.fleet-cards.single { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+.fleet-stats { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px; justify-content: center; }
+.fleet-stats p { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.fleet-stats strong { font-family: var(--display); font-size: 22px; letter-spacing: 0; margin-right: 6px; }
+
+/* ---------- tour teaser + tour page ---------- */
+.tour-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 6px; }
+.tour-facts li {
+  list-style: none; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--cream); color: var(--ink); border: 2px solid var(--ink);
+  padding: 8px 13px; border-radius: 999px;
+}
+.field-ink .tour-facts li { background: var(--ink); color: var(--cream); border-color: var(--mint); }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.tour-lead { font-size: 17px; max-width: 54ch; }
+.field-ink .tour-lead { opacity: .92; }
+
+.route-list { list-style: none; display: grid; gap: 18px; margin-top: 10px; counter-reset: stop; }
+.route-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+.route-num {
+  font-family: var(--display); font-size: clamp(26px, 3.4vw, 40px); line-height: 1;
+  background: var(--ink); color: var(--mint); border-radius: 16px;
+  padding: 12px 14px; box-shadow: 5px 6px 0 rgba(21, 24, 30, .22);
+  transform: rotate(-2deg); min-width: 64px; text-align: center;
+}
+.route-card:nth-child(even) .route-num { transform: rotate(2deg); background: #fff; color: var(--ink); border: 3px solid var(--ink); }
+.route-card h3 { font-size: clamp(18px, 2vw, 23px); margin-bottom: 6px; }
+.route-card p { font-size: 15px; max-width: 62ch; }
+.route-card .loc { max-width: 420px; margin-top: 14px; }
+.route-flag { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: var(--gold); border: 2px solid var(--ink); border-radius: 999px; padding: 4px 10px; display: inline-block; margin-left: 10px; transform: translateY(-3px); }
+
+.tour-hero-facts { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+.policy { margin-top: 26px; padding: 22px 26px; background: #fff; border: 3px solid var(--ink); border-radius: 22px; box-shadow: 8px 9px 0 var(--ink); }
+.policy h3 { font-size: 18px; margin-bottom: 10px; }
+.policy ul { list-style: none; display: grid; gap: 8px; }
+.policy li { font-size: 14.5px; padding-left: 24px; position: relative; }
+.policy li::before { content: '★'; position: absolute; left: 0; color: var(--mint-deep); }
+
+/* ---------- repairs & parts ---------- */
+.parts-line { font-size: 16.5px; max-width: 44ch; margin-top: 18px; }
+.parts-line .script { margin-right: 8px; }
+
 /* ---------- static fallback ---------- */
 html.static .mq-track { animation: none; }
 html.static .spin-badge svg { animation: none; }
@@ -328,4 +390,7 @@ html.static .spin-badge svg { animation: none; }
   .burnout-stage { inset: 9vh 0 auto 0; height: 20vh; }
   .fleet-scooter { left: auto; right: 4vw; bottom: auto; top: 30px; width: 128px; }
   .smoke { left: auto; right: 26vw; bottom: auto; top: 60px; transform: scale(.7); }
+  .route-card { grid-template-columns: 1fr; }
+  .route-num { min-width: 56px; width: max-content; }
+  .topbar { flex-wrap: wrap; row-gap: 8px; }
 }

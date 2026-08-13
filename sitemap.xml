@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dormant until domain cutover: robots.txt still disallows crawling.
+     At cutover, swap the base URL to https://littlejohnscooters.com and open robots. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/tours/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/tours/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/tours/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/tours/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/"/>
+  </url>
+  <url>
+    <loc>https://salty-code-studio.github.io/little-john-scooters/nl/tours/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/tours/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/tours/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/tours/"/>
+  </url>
+</urlset>

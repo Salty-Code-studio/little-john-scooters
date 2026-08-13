@@ -1,6 +1,21 @@
-/* Little John Scooters · Island Pop engine v3 (cartoon scooter) */
+/* Little John Scooters · Island Pop engine v4 (multi-page: home + tours, EN/NL) */
 (function () {
   'use strict';
+
+  /* ---- booking bridge ----
+     When the FleetDesk booking system goes live, set BOOKING_URL to its
+     public booking address (e.g. 'https://book.littlejohnscooters.com').
+     Every .js-book CTA then routes there. While null, CTAs keep their
+     WhatsApp / in-page fallbacks. */
+  var BOOKING_URL = null;
+
+  if (BOOKING_URL) {
+    document.querySelectorAll('.js-book').forEach(function (a) {
+      a.href = BOOKING_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+  }
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
     window.location.search.indexOf('static=1') !== -1;
@@ -34,12 +49,14 @@
   /* --- HERO: cartoon drops in with squash and stretch, then lives --- */
   var heroImg = document.querySelector('.hero-scooter');
   var heroStage = document.querySelector('.hero-stage');
-  gsap.set(heroImg, { y: -window.innerHeight, rotation: -14, transformOrigin: '50% 100%' });
-  gsap.timeline({ delay: 0.25 })
-    .to(heroImg, { y: 0, rotation: 0, duration: 1.0, ease: 'bounce.out' })
-    .to(heroImg, { scaleY: 0.9, scaleX: 1.06, duration: 0.09, ease: 'power1.in' }, '-=0.14')
-    .to(heroImg, { scaleY: 1, scaleX: 1, duration: 0.45, ease: 'elastic.out(1.5, 0.4)' })
-    .add(startIdle);
+  if (heroImg && heroStage) {
+    gsap.set(heroImg, { y: -window.innerHeight, rotation: -14, transformOrigin: '50% 100%' });
+    gsap.timeline({ delay: 0.25 })
+      .to(heroImg, { y: 0, rotation: 0, duration: 1.0, ease: 'bounce.out' })
+      .to(heroImg, { scaleY: 0.9, scaleX: 1.06, duration: 0.09, ease: 'power1.in' }, '-=0.14')
+      .to(heroImg, { scaleY: 1, scaleX: 1, duration: 0.45, ease: 'elastic.out(1.5, 0.4)' })
+      .add(startIdle);
+  }
 
   function startIdle() {
     gsap.to(heroStage, { y: -10, duration: 2.3, ease: 'sine.inOut', yoyo: true, repeat: -1 });
@@ -57,11 +74,15 @@
   }
 
   /* giant hero words slide in from alternating sides */
-  gsap.from('.giant .l1', { x: -90, opacity: 0, duration: 0.7, ease: 'back.out(1.8)', delay: 0.1 });
-  gsap.from('.giant .l2', { x: 90, opacity: 0, duration: 0.7, ease: 'back.out(1.8)', delay: 0.22 });
-  gsap.from('.giant .l3', { x: -90, opacity: 0, duration: 0.7, ease: 'back.out(1.8)', delay: 0.34 });
-  gsap.from('#hero .hero-cta .btn', { y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(2)', delay: 0.9 });
-  gsap.from('.spin-badge', { scale: 0, rotation: -60, duration: 0.7, ease: 'back.out(1.9)', delay: 1.1 });
+  gsap.utils.toArray('.giant .line').forEach(function (line, i) {
+    gsap.from(line, { x: i % 2 ? 90 : -90, opacity: 0, duration: 0.7, ease: 'back.out(1.8)', delay: 0.1 + i * 0.12 });
+  });
+  if (document.querySelector('#hero .hero-cta .btn')) {
+    gsap.from('#hero .hero-cta .btn', { y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(2)', delay: 0.9 });
+  }
+  if (document.querySelector('.spin-badge')) {
+    gsap.from('.spin-badge', { scale: 0, rotation: -60, duration: 0.7, ease: 'back.out(1.9)', delay: 1.1 });
+  }
 
   /* doodles pop in and wiggle */
   document.querySelectorAll('.doodles').forEach(function (group) {
@@ -106,14 +127,16 @@
       .to(fleetScoot, { rotation: -2, duration: 0.2, ease: 'power1.out' })
       .to(fleetScoot, { rotation: 0, duration: 0.5, ease: 'elastic.out(1.3, 0.4)' });
   }
-  ScrollTrigger.create({
-    trigger: '#fleet', start: 'top 60%',
-    onEnter: burnoutWheelie,
-    onEnterBack: burnoutWheelie
-  });
+  if (fleetScoot && document.querySelector('#fleet')) {
+    ScrollTrigger.create({
+      trigger: '#fleet', start: 'top 60%',
+      onEnter: burnoutWheelie,
+      onEnterBack: burnoutWheelie
+    });
+  }
 
-  /* --- section content: springy entrances --- */
-  ['#fleet', '#rates', '#explore', '#trust'].forEach(function (sel) {
+  /* --- section content: springy entrances (any page) --- */
+  ['#fleet', '#rates', '#explore', '#tour', '#trust', '#intro', '#included', '#info'].forEach(function (sel) {
     var wrap = document.querySelector(sel + ' .wrap');
     if (!wrap) return;
     gsap.from(wrap.children, {
@@ -121,52 +144,67 @@
       scrollTrigger: { trigger: sel, start: 'top 66%' }
     });
   });
-  gsap.from('.booking-copy > *', {
-    x: -60, opacity: 0, duration: 0.75, stagger: 0.08, ease: 'back.out(1.6)',
-    scrollTrigger: { trigger: '#booking', start: 'top 62%' }
+  /* tour route: cards pull in one by one */
+  gsap.utils.toArray('.route-card').forEach(function (card, i) {
+    gsap.from(card, {
+      y: 60, opacity: 0, rotation: i % 2 ? 2 : -2, duration: 0.7, ease: 'back.out(1.7)',
+      scrollTrigger: { trigger: card, start: 'top 82%' }
+    });
   });
-  gsap.from('.phone', {
-    x: 140, rotation: 14, opacity: 0, duration: 0.9, ease: 'back.out(1.4)',
-    scrollTrigger: { trigger: '#booking', start: 'top 62%' }
-  });
-  gsap.from('.price-stack li', {
-    x: -80, opacity: 0, duration: 0.7, stagger: 0.14, ease: 'back.out(1.8)',
-    scrollTrigger: { trigger: '#rates', start: 'top 60%' }
-  });
-  gsap.from('.repairs-copy > *', {
-    x: -60, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'back.out(1.6)',
-    scrollTrigger: { trigger: '#repairs', start: 'top 66%' }
-  });
+  if (document.querySelector('#booking')) {
+    gsap.from('.booking-copy > *', {
+      x: -60, opacity: 0, duration: 0.75, stagger: 0.08, ease: 'back.out(1.6)',
+      scrollTrigger: { trigger: '#booking', start: 'top 62%' }
+    });
+    gsap.from('.phone', {
+      x: 140, rotation: 14, opacity: 0, duration: 0.9, ease: 'back.out(1.4)',
+      scrollTrigger: { trigger: '#booking', start: 'top 62%' }
+    });
+  }
+  if (document.querySelector('#rates')) {
+    gsap.from('.price-stack li', {
+      x: -80, opacity: 0, duration: 0.7, stagger: 0.14, ease: 'back.out(1.8)',
+      scrollTrigger: { trigger: '#rates', start: 'top 60%' }
+    });
+  }
 
   /* --- REPAIRS: assembled cartoon morphs into its exploded twin on scroll --- */
-  var morphTl = gsap.timeline({
-    scrollTrigger: { trigger: '#repairs', start: 'top 70%', end: 'bottom 20%', scrub: 0.6 }
-  });
-  morphTl
-    .to('.rp-whole', { opacity: 0, scale: 1.05, rotation: 2, duration: 1, ease: 'power1.inOut' }, 0)
-    .fromTo('.rp-exploded', { opacity: 0, scale: 0.92, rotation: -2 },
-      { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: 'power1.inOut' }, 0)
-    .to('.part-label', { opacity: 1, duration: 0.3, stagger: 0.07 }, 0.7)
-    .to({}, { duration: 0.8 })
-    .to('.part-label', { opacity: 0, duration: 0.25 }, 2.1)
-    .to('.rp-exploded', { opacity: 0, scale: 0.94, duration: 1, ease: 'power1.inOut' }, 2.3)
-    .to('.rp-whole', { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: 'power1.inOut' }, 2.3);
+  if (document.querySelector('#repairs')) {
+    gsap.from('.repairs-copy > *', {
+      x: -60, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'back.out(1.6)',
+      scrollTrigger: { trigger: '#repairs', start: 'top 66%' }
+    });
+    var morphTl = gsap.timeline({
+      scrollTrigger: { trigger: '#repairs', start: 'top 70%', end: 'bottom 20%', scrub: 0.6 }
+    });
+    morphTl
+      .to('.rp-whole', { opacity: 0, scale: 1.05, rotation: 2, duration: 1, ease: 'power1.inOut' }, 0)
+      .fromTo('.rp-exploded', { opacity: 0, scale: 0.92, rotation: -2 },
+        { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: 'power1.inOut' }, 0)
+      .to('.part-label', { opacity: 1, duration: 0.3, stagger: 0.07 }, 0.7)
+      .to({}, { duration: 0.8 })
+      .to('.part-label', { opacity: 0, duration: 0.25 }, 2.1)
+      .to('.rp-exploded', { opacity: 0, scale: 0.94, duration: 1, ease: 'power1.inOut' }, 2.3)
+      .to('.rp-whole', { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: 'power1.inOut' }, 2.3);
+  }
 
   /* --- finale: photo scooter skids in and settles --- */
   var fin = document.querySelector('.finale-scooter');
-  gsap.set(fin, { x: -window.innerWidth * 0.7, rotation: -10 });
-  ScrollTrigger.create({
-    trigger: '#finale', start: 'top 55%', once: true,
-    onEnter: function () {
-      gsap.timeline()
-        .to(fin, { x: 0, duration: 0.9, ease: 'power3.out' })
-        .to(fin, { rotation: 6, duration: 0.16, ease: 'power2.out' }, '-=0.25')
-        .to(fin, { rotation: 0, duration: 0.8, ease: 'elastic.out(1.2, 0.35)' })
-        .add(function () {
-          gsap.to(fin, { y: -10, duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-        });
-    }
-  });
+  if (fin) {
+    gsap.set(fin, { x: -window.innerWidth * 0.7, rotation: -10 });
+    ScrollTrigger.create({
+      trigger: '#finale', start: 'top 55%', once: true,
+      onEnter: function () {
+        gsap.timeline()
+          .to(fin, { x: 0, duration: 0.9, ease: 'power3.out' })
+          .to(fin, { rotation: 6, duration: 0.16, ease: 'power2.out' }, '-=0.25')
+          .to(fin, { rotation: 0, duration: 0.8, ease: 'elastic.out(1.2, 0.35)' })
+          .add(function () {
+            gsap.to(fin, { y: -10, duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+          });
+      }
+    });
+  }
 
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();

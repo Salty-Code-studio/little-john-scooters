@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little John Scooters · Bonaire</title>
-<meta name="description" content="Scooter rental in Kralendijk, Bonaire. From $22.50 a day, helmet and insurance included. Book online, ride the island your way.">
+<title>Little John Scooters · Scooter Rental Bonaire</title>
+<meta name="description" content="Scooter rental in Kralendijk, Bonaire. From $22.50 a day, helmet and insurance included. Island tours, repairs and parts. Book online, ride the island your way.">
 <meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://salty-code-studio.github.io/little-john-scooters/">
+<link rel="alternate" hreflang="en" href="https://salty-code-studio.github.io/little-john-scooters/">
+<link rel="alternate" hreflang="nl" href="https://salty-code-studio.github.io/little-john-scooters/nl/">
+<link rel="alternate" hreflang="x-default" href="https://salty-code-studio.github.io/little-john-scooters/">
 <meta property="og:title" content="Little John Scooters · Bonaire">
-<meta property="og:description" content="Scooter rental in Kralendijk. From $22.50 a day, helmet and insurance included.">
+<meta property="og:description" content="Scooter rental in Kralendijk. From $22.50 a day, helmet and insurance included. Island tours, repairs and parts.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://salty-code-studio.github.io/little-john-scooters/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,16 +20,52 @@
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/cartoon-hero.png" as="image">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Little John Scooter Rental",
+  "description": "Scooter rental, island tours, scooter repairs and parts in Kralendijk, Bonaire.",
+  "url": "https://salty-code-studio.github.io/little-john-scooters/",
+  "telephone": "+5997774734",
+  "email": "info@littlejohnscooters.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kaya Industria 17-5",
+    "addressLocality": "Kralendijk",
+    "addressCountry": "BQ"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+  ],
+  "priceRange": "$",
+  "sameAs": [
+    "https://www.instagram.com/littlejohnscootersbonaire",
+    "https://www.facebook.com/LittleJohnscooters"
+  ]
+}
+</script>
 </head>
 <body>
 
 <header class="topbar">
-  <div class="lockup">
+  <a class="lockup" href="./" aria-label="Little John Scooters home" style="text-decoration:none">
     <span class="script">Little John</span>
     <span class="caps">Scooter Rental · <em>Bonaire</em></span>
-  </div>
+  </a>
   <p class="tagbar">★ Life's better on 2 Wheels ★</p>
-  <a class="pill" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20reserve%20a%20scooter." target="_blank" rel="noopener">WhatsApp us</a>
+  <div class="topnav">
+    <nav class="navlinks" aria-label="Main">
+      <a href="tours/">Island Tour</a>
+      <a href="#repairs">Repairs &amp; Parts</a>
+    </nav>
+    <div class="lang" aria-label="Language">
+      <span aria-current="true">EN</span>
+      <a href="nl/" lang="nl" hreflang="nl">NL</a>
+    </div>
+    <a class="pill" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20reserve%20a%20scooter." target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
 </header>
 
 <main>
@@ -55,12 +95,12 @@
       </svg>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-ink" href="#finale">Reserve now</a>
+      <a class="btn btn-ink js-book" href="#finale">Reserve now</a>
       <a class="btn btn-line" href="#fleet">See the fleet</a>
     </div>
   </section>
 
-  <div class="marquee mq-ink" aria-hidden="true"><div class="mq-track"><span>RIDE MORE, WORRY LESS ★ LIFE'S BETTER ON 2 WHEELS ★ KRALENDIJK · BONAIRE ★ BOOK ONLINE ★ </span><span>RIDE MORE, WORRY LESS ★ LIFE'S BETTER ON 2 WHEELS ★ KRALENDIJK · BONAIRE ★ BOOK ONLINE ★ </span></div></div>
+  <div class="marquee mq-ink" aria-hidden="true"><div class="mq-track"><span>RIDE MORE, WORRY LESS ★ ISLAND TOURS ★ REPAIRS &amp; PARTS ★ KRALENDIJK · BONAIRE ★ BOOK ONLINE ★ </span><span>RIDE MORE, WORRY LESS ★ ISLAND TOURS ★ REPAIRS &amp; PARTS ★ KRALENDIJK · BONAIRE ★ BOOK ONLINE ★ </span></div></div>
 
   <section class="stop field-cream" id="fleet">
     <div class="burnout-stage" aria-hidden="true">
@@ -69,24 +109,21 @@
     </div>
     <div class="wrap">
       <p class="kicker">Stop 01 · The fleet</p>
-      <h2 class="huge">Pick<br>your ride.</h2>
-      <div class="cards fleet-cards">
-        <article class="card model-card tilt-l" data-model="Reserve your Myst" data-stock="3 of 30 available">
+      <h2 class="huge">Meet<br>the Myst.</h2>
+      <div class="cards fleet-cards single">
+        <article class="card model-card tilt-l" data-model="Reserve your Myst" data-stock="7 of 44 available">
           <img class="model-cutout" src="assets/img/scooter-3q.png" alt="Mint Myst 50cc scooter">
           <p class="script accent">The island favorite</p>
           <h3>Myst 50cc</h3>
-          <p>Retro looks, mint finish, room for two. The scooter Bonaire knows us for.</p>
-          <ul class="badges"><li>Helmet included</li><li>Chain lock</li><li>Insurance included</li></ul>
-          <a class="chip-cta" href="#booking">Check availability →</a>
+          <p>Retro looks, mint finish, room for two. Every single scooter in our fleet is this exact machine: the one Bonaire knows us for. No lotteries, no downgrades. You get the good one.</p>
+          <ul class="badges"><li>Helmet included</li><li>Chain lock</li><li>Insurance included</li><li>Room for two</li></ul>
+          <a class="chip-cta js-book" href="#booking">Check availability →</a>
         </article>
-        <article class="card model-card tilt-r" data-model="Reserve your Sensa" data-stock="6 of 15 available">
-          <img class="model-cutout cut-sensa" src="assets/img/scooter-sensa.png" alt="Black Sensa Urban 50cc scooter">
-          <p class="script accent">City smooth</p>
-          <h3>Sensa Urban 50cc</h3>
-          <p>Light, nimble and easy on fuel. Perfect for the boulevard and beyond.</p>
-          <ul class="badges"><li>Helmet included</li><li>Chain lock</li><li>Insurance included</li></ul>
-          <a class="chip-cta" href="#booking">Check availability →</a>
-        </article>
+      </div>
+      <div class="fleet-stats" aria-label="Fleet facts">
+        <p><strong>44</strong> mint Mysts</p>
+        <p><strong>1</strong> model, zero guesswork</p>
+        <p><strong>2</strong> wheels is all you need</p>
       </div>
     </div>
   </section>
@@ -133,10 +170,29 @@
     </div>
   </section>
 
+  <section class="stop field-ink" id="tour">
+    <div class="wrap">
+      <p class="kicker mint-k">Stop 04 · Island Tour</p>
+      <h2 class="huge">The island tour.<br>With the boss himself.</h2>
+      <p class="script accent">Buckle up, Buttercup!</p>
+      <p class="tour-lead">Forget the snooze-and-drool bus tours. Ride North to South with Little John himself: flamingos, snorkel stops, 1000 Steps, rum stories at the Cadushy Distillery, and a beach-bar landing at Sorobon with food and drinks on us.</p>
+      <ul class="tour-facts">
+        <li>$145 per person</li>
+        <li>3–4 hours</li>
+        <li>Max 10 riders</li>
+        <li>Guide: EN · ES · NL · PAP</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-mint" href="tours/">See the full route</a>
+        <a class="btn btn-line" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20check%20availability%20for%20the%20Island%20Tour." target="_blank" rel="noopener">Check availability</a>
+      </div>
+    </div>
+  </section>
+
   <section class="stop field-mint" id="booking">
     <div class="wrap booking-wrap">
       <div class="booking-copy">
-        <p class="kicker">Stop 04 · Booking</p>
+        <p class="kicker">Stop 05 · Booking</p>
         <h2 class="huge">Book online.<br>For real.</h2>
         <ul class="checks">
           <li>Live availability, no double bookings</li>
@@ -150,7 +206,7 @@
         <div class="phone-notch"></div>
         <div class="phone-screen">
           <p class="phone-title" id="phoneModel">Reserve your Myst</p>
-          <div class="stock-pill" id="phoneStock">3 of 30 available</div>
+          <div class="stock-pill" id="phoneStock">7 of 44 available</div>
           <div class="cal">
             <div class="cal-head"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
             <div class="cal-grid">
@@ -163,7 +219,7 @@
           <div class="steps">
             <span class="done">Dates</span><span class="active">Details</span><span>License + signature</span><span>Confirmed</span>
           </div>
-          <a class="phone-btn" href="#finale">Continue</a>
+          <a class="phone-btn js-book" href="#finale">Continue</a>
         </div>
       </div>
     </div>
@@ -173,7 +229,7 @@
 
   <section class="stop field-cream" id="trust">
     <div class="wrap">
-      <p class="kicker">Stop 05 · Riders say</p>
+      <p class="kicker">Stop 06 · Riders say</p>
       <div class="stars" aria-label="5 star reviews">★★★★★</div>
       <div class="cards quotes">
         <blockquote class="card tilt-l">"Friendly staff, super easy process."</blockquote>
@@ -188,25 +244,28 @@
     </div>
   </section>
 
-
   <section class="stop field-gold" id="repairs">
     <div class="wrap repairs-wrap">
       <div class="repairs-copy">
-        <p class="kicker">Stop 06 · Repairs</p>
+        <p class="kicker">Stop 07 · Repairs &amp; Parts</p>
         <h2 class="huge">We take it apart.<br>So you don't have to.</h2>
-        <p class="repairs-lead"><span class="script accent">Also at Little John</span>&nbsp; Scooter repairs, with pickup service. We fetch it, fix it, you ride worry-free.</p>
-        <ul class="badges repairs-badges"><li>Pickup service</li><li>Quick turnaround</li><li>Quality parts</li></ul>
-        <a class="chip-cta" href="https://wa.me/5997774734?text=Hi%21%20My%20scooter%20needs%20a%20repair." target="_blank" rel="noopener">WhatsApp the workshop →</a>
+        <p class="repairs-lead"><span class="script accent">Also at Little John</span>&nbsp; Scooter repairs, with pickup service. We fetch it, fix it, you ride worry-free. Not our scooter? Bring it in anyway, we fix those too.</p>
+        <p class="parts-line"><span class="script accent">Need a part?</span> We order scooter and motorcycle parts on request, and fit them for you while we're at it.</p>
+        <ul class="badges repairs-badges"><li>Pickup service</li><li>Quick turnaround</li><li>Quality parts</li><li>Parts ordered on request</li></ul>
+        <div class="cta-row">
+          <a class="chip-cta" href="https://wa.me/5997774734?text=Hi%21%20My%20scooter%20needs%20a%20repair." target="_blank" rel="noopener">WhatsApp the workshop →</a>
+          <a class="chip-cta" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20order%20a%20part." target="_blank" rel="noopener">Order a part →</a>
+        </div>
       </div>
       <div class="repairs-stage">
-<div class="morph-stage">
-        <img class="rp-whole" src="assets/img/cartoon-hero.png" alt="Cartoon scooter assembled">
-        <img class="rp-exploded" src="assets/img/cartoon-exploded.png" alt="Cartoon scooter taken apart into its parts">
-        <span class="part-label pl-1">Tune-up</span>
-        <span class="part-label pl-2">Brakes</span>
-        <span class="part-label pl-3">Oil change</span>
-        <span class="part-label pl-4">Tires</span>
-      </div>
+        <div class="morph-stage">
+          <img class="rp-whole" src="assets/img/cartoon-hero.png" alt="Cartoon scooter assembled">
+          <img class="rp-exploded" src="assets/img/cartoon-exploded.png" alt="Cartoon scooter taken apart into its parts">
+          <span class="part-label pl-1">Tune-up</span>
+          <span class="part-label pl-2">Brakes</span>
+          <span class="part-label pl-3">Oil change</span>
+          <span class="part-label pl-4">Tires</span>
+        </div>
       </div>
     </div>
   </section>
@@ -222,11 +281,11 @@
       <h2 class="giant-2">Reserve<br>now.</h2>
       <img class="finale-scooter" src="assets/img/scooter-profile.png" alt="">
       <div class="hero-cta">
-        <a class="btn btn-mint btn-big" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20reserve%20a%20scooter." target="_blank" rel="noopener">Book on WhatsApp</a>
+        <a class="btn btn-mint btn-big js-book" href="https://wa.me/5997774734?text=Hi%21%20I%27d%20like%20to%20reserve%20a%20scooter." target="_blank" rel="noopener">Book on WhatsApp</a>
       </div>
       <p class="contact-line"><a href="mailto:info@littlejohnscooters.com">info@littlejohnscooters.com</a> · +599 777 4734</p>
       <footer>
-        <p class="credit">Concept by Salty Code Studio</p>
+        <p class="credit">Little John Scooter Rental · Kaya Industria 17-5, Kralendijk, Bonaire</p>
         <p class="credit credit-photos">Location photos: Dronepicr (CC BY 3.0 / CC BY 2.0) · Dave Bezaire (CC BY-SA 2.0) · via Wikimedia Commons</p>
       </footer>
     </div>
