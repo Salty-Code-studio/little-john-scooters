@@ -412,6 +412,33 @@ html.static .part-label { opacity: 1; }
 .q-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .q-chip { font-size: 13.5px; font-weight: 700; background: #fff; border: 2px solid var(--ink); border-radius: 999px; padding: 8px 13px; cursor: pointer; box-shadow: 2px 3px 0 var(--ink); }
 .q-chip.sel { background: var(--mint); }
+.q-modes { margin-bottom: 14px; }
+.q-modes .q-opt { font-size: 13.5px; padding: 11px 10px; }
+
+/* tap-to-pick calendar, styled after the phone-mockup calendar */
+.cal2 { margin-top: 4px; }
+.cal2-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.cal2-title { font-family: var(--display); text-transform: uppercase; font-size: 14.5px; letter-spacing: .06em; }
+.cal2-nav {
+  width: 36px; height: 36px; border-radius: 12px; border: 2px solid var(--ink);
+  background: #fff; font-weight: 700; font-size: 16px; cursor: pointer;
+  box-shadow: 2px 3px 0 var(--ink); line-height: 1;
+}
+.cal2-nav:hover:not(:disabled) { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
+.cal2-nav:disabled { opacity: .3; cursor: default; box-shadow: none; }
+.cal2-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.cal2-grid .dow { font-size: 10px; letter-spacing: .1em; opacity: .55; font-weight: 700; text-transform: uppercase; padding: 4px 0; }
+.cal2-day {
+  font-family: var(--body); font-size: 13.5px; font-weight: 600; color: var(--ink);
+  padding: 10px 0; border-radius: 10px; background: var(--cream);
+  border: 2px solid transparent; cursor: pointer;
+}
+.cal2-day:hover:not(:disabled):not(.edge) { border-color: var(--ink); }
+.cal2-day:disabled { opacity: .28; cursor: default; }
+.cal2-day.mid { background: #bdeee8; }
+.cal2-day.edge { background: var(--mint); border-color: var(--ink); font-weight: 700; }
+.cal2-hint { font-size: 12.5px; opacity: .7; margin-top: 10px; min-height: 16px; }
+
 .q-est { margin-top: 16px; padding: 14px 16px; background: var(--cream); border: 3px dashed var(--ink); border-radius: 14px; font-size: 15px; font-weight: 600; }
 .q-est strong { font-family: var(--display); font-size: 22px; }
 .q-est em { display: block; font-style: normal; font-size: 12px; opacity: .7; margin-top: 2px; }

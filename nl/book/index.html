@@ -64,10 +64,23 @@
       <!-- Stap 2: data -->
       <section class="q-step" aria-label="Data">
         <h1 class="q-title">Wanneer<br>rij je?</h1>
-        <p class="q-sub">Open ma-vr 09:00-17:00, za 10:00-14:00, zondag op afspraak.</p>
+        <p class="q-sub">Tik je dagen aan op de kalender. Open ma-vr 09:00-17:00, za 10:00-14:00, zondag op afspraak.</p>
         <div class="q-card">
-          <label class="q-field"><span>Ophaaldatum</span><input class="q-input" type="date" id="qFrom"></label>
-          <label class="q-field"><span>Terugbrengdatum</span><input class="q-input" type="date" id="qUntil"></label>
+          <div class="q-opts row q-modes">
+            <button type="button" class="q-opt sel" data-mode="range">Dagen &amp; weken</button>
+            <button type="button" class="q-opt" data-mode="longterm">Lange termijn · per maand</button>
+          </div>
+          <div class="cal2" id="qCal" aria-label="Kies je datums"></div>
+          <div class="q-field" id="qMonthsField" hidden><span>Hoeveel maanden?</span>
+            <div class="q-chips">
+              <button type="button" class="q-chip" data-months="1">1</button>
+              <button type="button" class="q-chip" data-months="2">2</button>
+              <button type="button" class="q-chip" data-months="3">3</button>
+              <button type="button" class="q-chip" data-months="4">4</button>
+              <button type="button" class="q-chip" data-months="5">5</button>
+              <button type="button" class="q-chip" data-months="6">6</button>
+            </div>
+          </div>
           <div class="q-field"><span>Ophaaltijd (ongeveer)</span>
             <div class="q-chips">
               <button type="button" class="q-chip" data-time="09:00">09:00</button>

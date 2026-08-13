@@ -64,10 +64,23 @@
       <!-- Step 2: dates -->
       <section class="q-step" aria-label="Dates">
         <h1 class="q-title">When do<br>you ride?</h1>
-        <p class="q-sub">Open Mon-Fri 09:00-17:00, Sat 10:00-14:00, Sunday by appointment.</p>
+        <p class="q-sub">Tap your days on the calendar. Open Mon-Fri 09:00-17:00, Sat 10:00-14:00, Sunday by appointment.</p>
         <div class="q-card">
-          <label class="q-field"><span>Pick-up date</span><input class="q-input" type="date" id="qFrom"></label>
-          <label class="q-field"><span>Return date</span><input class="q-input" type="date" id="qUntil"></label>
+          <div class="q-opts row q-modes">
+            <button type="button" class="q-opt sel" data-mode="range">Days &amp; weeks</button>
+            <button type="button" class="q-opt" data-mode="longterm">Long term · monthly</button>
+          </div>
+          <div class="cal2" id="qCal" aria-label="Pick your dates"></div>
+          <div class="q-field" id="qMonthsField" hidden><span>How many months?</span>
+            <div class="q-chips">
+              <button type="button" class="q-chip" data-months="1">1</button>
+              <button type="button" class="q-chip" data-months="2">2</button>
+              <button type="button" class="q-chip" data-months="3">3</button>
+              <button type="button" class="q-chip" data-months="4">4</button>
+              <button type="button" class="q-chip" data-months="5">5</button>
+              <button type="button" class="q-chip" data-months="6">6</button>
+            </div>
+          </div>
           <div class="q-field"><span>Pick-up time (roughly)</span>
             <div class="q-chips">
               <button type="button" class="q-chip" data-time="09:00">09:00</button>
