@@ -403,6 +403,7 @@ html.static .part-label { opacity: 1; }
 .q-opt:hover { transform: translate(1px, 2px); box-shadow: 1px 1px 0 var(--ink); }
 .q-opt.sel { background: var(--mint); }
 .q-field { display: block; margin-top: 14px; }
+.q-field[hidden], .q-est[hidden] { display: none; }
 .q-field span { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
 .q-input {
   width: 100%; font-family: var(--body); font-size: 17px; font-weight: 600; color: var(--ink);
