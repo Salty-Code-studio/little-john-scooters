@@ -251,6 +251,7 @@
 
   /* ---------------- pricing ---------------- */
   function money(cents) { return '$' + (cents / 100).toFixed(2).replace(/\.00$/, ''); }
+  function monthsCost(m) { if (m <= 0) return 0; return m === 1 ? 35000 : m * 30000; }
   function rangeEstimate(days) {
     if (days <= 0) return null;
     if (days === 1) return 3500;
@@ -259,7 +260,7 @@
       var afterM = Math.max(0, days - m * 28);
       for (var w = 0; w <= Math.ceil(afterM / 7); w++) {
         var d = Math.max(0, afterM - w * 7);
-        best = Math.min(best, m * 30000 + w * 14000 + d * 2250);
+        best = Math.min(best, monthsCost(m) + w * 15000 + d * 2250);
       }
     }
     return best;
@@ -268,7 +269,7 @@
     if (QUIZ === 'tour') return state.people > 0 ? state.people * 14500 : null;
     if (QUIZ !== 'rental') return null;
     if (!state.from || !state.until) return null;
-    if (state.mode === 'longterm') return monthsBetween(state.from, state.until) * 30000;
+    if (state.mode === 'longterm') return monthsCost(monthsBetween(state.from, state.until));
     return rangeEstimate(rentalDays());
   }
   function durLabel() {
